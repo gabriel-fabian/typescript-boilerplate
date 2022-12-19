@@ -1,10 +1,13 @@
 {
   "name": "ts-boilerplate",
   "version": "0.0.0",
-  "description": "A simple Node.js TypeScript development environment with Husky, Eslint and msg linter",
+  "description": "A simple Node.js TypeScript development environment with Husky, Eslint and commit msg linter",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gabriel Fabian",
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.4.0"
+  }
 }
