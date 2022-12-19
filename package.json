@@ -1,5 +1,5 @@
 {
-  "name": "ts-boilerplate",
+  "name": "typescript-boilerplate",
   "version": "0.0.0",
   "description": "A simple Node.js TypeScript development environment with Husky, Eslint and commit msg linter",
   "scripts": {
