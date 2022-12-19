@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "A simple Node.js TypeScript development environment with Husky, Eslint and commit msg linter",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "echo \"Error: no script defined\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "author": "Gabriel Fabian",
   "license": "GPL-3.0-or-later",
@@ -12,6 +16,8 @@
     "eslint": "^8.30.0",
     "eslint-config-standard-with-typescript": "^24.0.0",
     "git-commit-msg-linter": "^4.4.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "typescript": "^4.9.4"
   }
 }
