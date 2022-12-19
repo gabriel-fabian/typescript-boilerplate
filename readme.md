@@ -29,7 +29,7 @@ Husky is configured to run two scripts, one for pre commit and other for pre pus
 
 If Husky isn't working make sure to run `npm run prepare` and have files matching the LintStaged config.
 
-Licensed under the GNU GPL v3.0. See the [LICENSE](https://github.com/gabriel-fabian/typescript-boilerplate/LICENSE) file for details.
+Licensed under the GNU GPL v3.0. See the [LICENSE](https://github.com/gabriel-fabian/typescript-boilerplate/blob/master/LICENSE) file for details.
 
 [eslint]: https://github.com/eslint/eslint
 [jest]: https://github.com/facebook/jest
