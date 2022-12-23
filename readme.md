@@ -10,6 +10,7 @@ This boilerplate includes some basic tools as:
 - [CommitMessageLinter][msg-linter] to prevent commits outside the conventional format.
 - [LintStaged][lint-staged] to run tests only on staged files.
 - [FakerJs][faker-js] to create random values for tests.
+- [ModuleAlias][module-alias] to handle the defined modules in tsconfig
 
 ## Getting Started
 
@@ -25,9 +26,24 @@ npm install && npm run prepare
 
 This boilerplate will prevent commits outside the [ConventionalCommits][conventional-commits] format, if you don't know what that is read the linked DOC.
 
-Husky is configured to run two scripts, one for pre commit and other for pre push, the first one will execute [LintStaged][lint-staged] which will run all the commands in `.lintstagedrc.json` config file for the specified file extensions. The second one will run Jest with coverage option.
+Husky is configured to run three scripts. A pre-commit one to execute the [LintStaged][lint-staged] which will run all the commands in `.lintstagedrc.json` config file. A pre-push one to execute Jest in coverage mode. And a commit-msg one to enable `git-commit-msg-linter` when using Husky
 
 If Husky isn't working make sure to run `npm run prepare` and have files matching the LintStaged config.
+
+Note that in case you decided to use `@` aliases when importing files, you will need to call `module-alias/register` in the main file of your project or else your compiled source with `tsc` will not know how to handle these modules. e.g.
+
+```javascript
+  import 'module-alias/register' // Import the module-alias register to handle the @ module imports
+  import { app } from './express'
+
+  const port: number = Number(process.env.PORT) || 3000
+
+  app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`)
+  })
+```
+
+## License
 
 Licensed under the GNU GPL v3.0. See the [LICENSE](https://github.com/gabriel-fabian/typescript-boilerplate/blob/master/LICENSE) file for details.
 
@@ -38,3 +54,4 @@ Licensed under the GNU GPL v3.0. See the [LICENSE](https://github.com/gabriel-fa
 [lint-staged]: https://github.com/okonet/lint-staged
 [faker-js]: https://github.com/faker-js/faker
 [conventional-commits]: https://www.conventionalcommits.org/
+[module-alias]: https://github.com/ilearnio/module-alias
