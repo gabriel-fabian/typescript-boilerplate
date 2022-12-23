@@ -4,6 +4,7 @@
   "description": "A simple Node.js TypeScript development environment with Husky, Eslint and commit msg linter",
   "scripts": {
     "start": "echo \"Error: no script defined\" && exit 1",
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --no-cache",
